@@ -2,7 +2,7 @@
 
 import pygame
 from pygame.constants import *
-from time import sleep, clock
+from time import sleep
 
 class App :
 
@@ -42,7 +42,6 @@ class App :
         def mainloop(self):
                 d = 0.1 # one loop lasts 0.1 sec
                 while True :
-                        z = clock()
                         for event in pygame.event.get():
                                 if event.type == QUIT :
                                         return
@@ -50,7 +49,7 @@ class App :
                                         self.miettes.append((self.miette.copy(), 0))
                         self.build()# temp ; dedent by 2 for the final version
                         try :
-                                sleep(d-clock()+z)
+                                sleep(d)
                         except ValueError :
                                 continue
 
